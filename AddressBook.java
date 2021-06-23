@@ -1,57 +1,75 @@
 package com.addressbook;
-import java.util.Scanner;
+import java.util.*;
 
 public class AddressBook {
-//	Take input from users to create Contact
-	public static void address() {
-	
-	Scanner sc = new Scanner(System.in);
-    
-	System.out.print("Enter Your First Name: ");
-	String first_name = sc.next();
 
-	
-	System.out.print("Enter Your Last Name: ");
-	String last_name = sc.next();
+	private String first_name;
+	private String last_name;
+	private String city;
+	private String state;
+	private int zip;
+	private long phone_number;   
+	private String email;
 
-	
-	System.out.print("Enter Your Address: ");
-	String address = sc.next();
 
-	
-	System.out.print("Enter Your City: ");
-	String city = sc.next();
-
-	
-	System.out.print("Enter Your State Name: ");
-	String state = sc.next();
-
-	
-	System.out.print("Enter Your Zip Code: ");
-	int zip_code = sc.nextInt();
-
-	
-	System.out.print("Enter Your Phone Number: ");
-	long phone_number = sc.nextLong();
-
-	
-	System.out.print("Enter Your Email Id: ");
-	String email_id = sc.next();
-	
-	System.out.println("First Name: " + first_name);
-	System.out.println("Last Name : " + last_name);
-	System.out.println("Last Name : " + address);
-	System.out.println("City : " + city);
-	System.out.println("State Name : " + state);
-	System.out.println("Zip Code : " + zip_code);
-	System.out.println("Phone Number : " + phone_number);
-	System.out.println("Email Id : " + email_id);
-
+	public String getFirst_name() {
+		return first_name;
 	}
-public static void main(String[] args) {
-	System.out.println("Welcome to Address Book Program");
-	address();
-}
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
+
+	
+	public String getLast_name() {
+		return last_name;
+	}
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
+
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public int getZip() {
+		return zip;
+	}
+	public void setZip(int zip) {
+		this.zip = zip;
+	}
+
+	public long getPhone_number() {
+		return phone_number;
+	}
+	public void setPhone_number(long phone_number) {
+		this.phone_number = phone_number;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "AddressBook [first_name=" + first_name + ", last_name=" + last_name + ", city=" + city + ", state="
+				+ state + ", zip=" + zip + ", phone_number=" + phone_number + ", email=" + email + "]";
+	}
+	
+	
+
 
 }
 
