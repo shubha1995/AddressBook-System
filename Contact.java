@@ -14,7 +14,8 @@ public static void main(String[] args) {
         				+ "1. Create new person\n"
         				+ "2. View all the existing person\n"
         				+ "3. Edit The Exisiting array\n"
-        				+ "4. Quit\n");
+        				+ "4. Remove The Person\n"
+        				+ "5. Quit\n");
         		int option = sc.nextInt();
                 sc.nextLine();
                 switch(option){
@@ -74,8 +75,24 @@ public static void main(String[] args) {
             				 }
                     	}
             				 break;
-                    
+            		//Remove person
                     case 4:
+                    	System.out.println("remove record");
+                    	System.out.println("Enter name to remove:");
+                    	for(int i=0;i<person.size();i++){
+               			address=person.get(i);
+               			if(sc.nextLine().equals(address.getFirstName())) {
+               			person.remove(address);
+               			System.out.println("List After removing"+person.toString());
+               			}
+               			else {
+              				 System.out.println("User not found");
+              			 }
+                    	}
+               				 break;
+               			 
+               		
+                    case 5:
                         return;
             	}
             	}
