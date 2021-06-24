@@ -1,71 +1,71 @@
 package com.addressbook;
 import java.util.*;
+
+
 public class Contact {
+	
+	
 
 public static void main(String[] args) {
-        	System.out.println("Welcome To Address Book Problem");
         	
-	        // Creating the AddressBook object.
-			AddressBook address = new AddressBook();
-			
-			
-			//Take input from user
-			Scanner sc = new Scanner(System.in);
-			
-			System.out.println("How many person u want to add");
-			int n = sc.nextInt();
-			ArrayList<AddressBook> list=new ArrayList<AddressBook>();
-			for(int i=0;i<n;i++){
-			
-		
-//			ArrayList<AddressBook> list1=new ArrayList<AddressBook>();
-			
-			// Setting the AddressBook details via the setter methods.
-			System.out.print("Enter Your First Name: ");
-			String firstName = sc.next();
-			address.setFirst_name(firstName);
-			
-			
-			System.out.print("Enter Your Last Name: ");
-			String lastName = sc.next();
-			address.setLast_name(lastName);
+        	List<AddressBook> person = new ArrayList<AddressBook>();
+        	Scanner sc = new Scanner(System.in);
+        	while(true) {
+        		System.out.println("Welcome To Address Book Problem\n\n"
+        				+ "Choose your option:\n"
+        				+ "1. Create new person\n"
+        				+ "2. View all the existing person\n"
+        				+ "3. Quit\n");
+        		int option = sc.nextInt();
+                sc.nextLine();
+                switch(option){
+                    case 1:
+                    	AddressBook address = new AddressBook();
+                    	
+                    	System.out.print("Enter Your Firstst Name: ");
+                    	address.setFirst_name(sc.nextLine());
+            			
+            			System.out.print("Enter Your Last Name: ");
+            			address.setLast_name(sc.nextLine());
+            			
 
-			
-			System.out.print("Enter Your City: ");
-			String city = sc.next();
-			address.setCity(city);
+            			System.out.print("Enter Your City: ");            		
+            			address.setCity(sc.nextLine());
+            			
+            			System.out.print("Enter Your State Name: ");         		
+            			address.setState(sc.nextLine());
 
-			
-			System.out.print("Enter Your State Name: ");
-			String state = sc.next();
-			address.setState(state);
+            			
+            			System.out.print("Enter Your Zip Code: ");           			
+            			address.setZip(sc.nextInt());
 
-			
-			System.out.print("Enter Your Zip Code: ");
-			int zip = sc.nextInt();
-			address.setZip(zip);
+            			
+            			System.out.print("Enter Your Phone Number: ");
+            			address.setPhone_number(sc.nextLong());
 
-			
-			System.out.print("Enter Your Phone Number: ");
-			long phone_number = sc.nextLong();
-			address.setPhone_number(phone_number);
-
-			
-			System.out.print("Enter Your Email Id: ");
-			String email = sc.next();
-			address.setEmail(email);
-			
-			list.add(address);
-			
-//			list.addAll(list1);
-		
-	        // Printing the employee details via the 'toString()' method that uses the getter methods.
-			//System.out.println(contact.toString());
-	    }
-		
-			System.out.println("Address Book lists are: "+list);
-		
+            			
+            			System.out.print("Enter Your Email Id: ");
+            			address.setEmail(sc.next());
+            			
+            			 person.add(address);
+            			 break;
+                    case 2:
+                        System.out.println("First_name\tLast_name\tCity\tState\tZip\tPhone_number\tEmail_id");
+                        for (AddressBook addPerson : person) {
+                            System.out.println(addPerson);
+                        }
+                        System.out.println("\n\n");
+                        break;
+                    case 3:
+                        return;
+        				
+        				
+        		
+        	}
+        	}
+}
 }
 
 
-}
+
+

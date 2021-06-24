@@ -10,6 +10,17 @@ public class AddressBook {
 	private int zip;
 	private long phone_number;   
 	private String email;
+	
+	public AddressBook() {
+		this.first_name=null;
+		this.last_name=null;
+		this.city=null;
+		this.state=null;;
+		this.zip=0;
+		this.phone_number=0;   
+		this.email=null;
+		
+	}
 
 
 	public String getFirst_name() {
