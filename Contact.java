@@ -3,8 +3,6 @@ import java.util.*;
 
 
 public class Contact {
-	
-	
 
 public static void main(String[] args) {
         	
@@ -15,18 +13,20 @@ public static void main(String[] args) {
         				+ "Choose your option:\n"
         				+ "1. Create new person\n"
         				+ "2. View all the existing person\n"
-        				+ "3. Quit\n");
+        				+ "3. Edit The Exisiting array\n"
+        				+ "4. Quit\n");
         		int option = sc.nextInt();
                 sc.nextLine();
                 switch(option){
+                //Add New Contact
                     case 1:
                     	AddressBook address = new AddressBook();
                     	
                     	System.out.print("Enter Your Firstst Name: ");
-                    	address.setFirst_name(sc.nextLine());
+                    	address.setFirstName(sc.nextLine());
             			
             			System.out.print("Enter Your Last Name: ");
-            			address.setLast_name(sc.nextLine());
+            			address.setLastName(sc.nextLine());
             			
 
             			System.out.print("Enter Your City: ");            		
@@ -41,7 +41,7 @@ public static void main(String[] args) {
 
             			
             			System.out.print("Enter Your Phone Number: ");
-            			address.setPhone_number(sc.nextLong());
+            			address.setPhoneNumber(sc.nextLong());
 
             			
             			System.out.print("Enter Your Email Id: ");
@@ -49,22 +49,38 @@ public static void main(String[] args) {
             			
             			 person.add(address);
             			 break;
+            			 //View all existing person
                     case 2:
-                        System.out.println("First_name\tLast_name\tCity\tState\tZip\tPhone_number\tEmail_id");
+                        
                         for (AddressBook addPerson : person) {
                             System.out.println(addPerson);
                         }
                         System.out.println("\n\n");
                         break;
+                       // edit existing contact
                     case 3:
+                    	System.out.println("Edit record");
+                    	System.out.println("Enter name to edit:");
+                    	for(int i=0;i<person.size();i++){
+               			address=person.get(i);
+                         	
+                      if(sc.nextLine().equals(address.getFirstName())) {
+                    		 System.out.println("Enter new city:");
+            				 address.setCity(sc.nextLine());    				 
+            				 System.out.println("List After is"+person.toString());
+                      }
+            				 else {
+            					 System.out.println("User not found");
+            				 }
+                    	}
+            				 break;
+                    
+                    case 4:
                         return;
-        				
-        				
-        		
-        	}
-        	}
-}
-}
+            	}
+            	}
+    }
+    }
 
 
 
